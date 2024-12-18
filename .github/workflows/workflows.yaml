@@ -21,7 +21,7 @@ jobs:
           node-version: "20.x"
 
       - name: Install package
-        uses: npm install
+        run: npm install
 
       - name: "Check status server"
-        uses: node index.js
+        run: node index.js
