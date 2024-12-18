@@ -13,7 +13,7 @@ jobs:
         node-version: [20.x, 22.x]
     steps:
       - name: Checkout code to push in pipeline
-        uses: action/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Set up Node Enviroment
         uses: actions/setup-node@v4
