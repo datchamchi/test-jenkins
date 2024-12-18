@@ -1,0 +1,27 @@
+name: First Job Github Action
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  firstBuild:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x, 22.x]
+    steps:
+      - name: Checkout code to push in pipeline
+        uses: action/checkout@v4
+
+      - name: Set up Node Enviroment
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+
+      - name: Install package
+        uses: npm install
+
+      - name: "Check status server"
+        uses: node index.js
